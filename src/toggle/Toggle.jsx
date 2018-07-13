@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Switch from '../switch/Switch';
 
 class Toggle extends Component {
-  static log = isOn =>
-    console.log(`the toggle is ${isOn ? 'on' : 'off'}`);
+  static log = (isOn, title) =>
+    console.log(`the ${title} toggle is ${isOn ? 'on' : 'off'}`);
 
   toggle = () =>
     this.setState(
       currentState => ({ on: !currentState.on }),
       () => {
-        Toggle.log(this.state.on)
+        Toggle.log(this.state.on, this.props.title)
       }
     );
 
