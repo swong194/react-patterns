@@ -3,7 +3,7 @@ import Switch from '../switch/Switch';
 
 const ToggleContext = React.createContext();
 
-class Toggle extends Component {
+class CompoundToggle extends Component {
   static switch = () => (
     <ToggleContext.Consumer>
       {
@@ -29,7 +29,7 @@ class Toggle extends Component {
     this.setState(
       ({ on }) => ({ on: !on }),
       () => {
-        Toggle.log(this.state.on, this.props.title);
+        CompoundToggle.log(this.state.on, this.props.title);
       }
     );
 
@@ -42,4 +42,4 @@ class Toggle extends Component {
   }
 }
 
-export default Toggle;
+export default CompoundToggle;
