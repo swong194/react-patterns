@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Toggle from '../toggle/Toggle.jsx';
+import CompoundToggle from '../toggle/CompoundToggle.jsx';
 
-class Compound extends Component {
-  render() {
-    return (
-      <Toggle title='Compound Component'/>
-    )
-  }
-}
+const Usage = ({...props }) =>
+  (
+    <CompoundToggle {...props}>
+      <CompoundToggle.title />
+      <CompoundToggle.switch />
+    </CompoundToggle>
+  )
 
-export default Compound;
+export default Usage;
